@@ -7,8 +7,6 @@
 /.angular/
 .angular/
 .idea/
-2025-fitstic-edizione-7-drf/
-
 # Node modules and dependency files
 /node_modules/
 /package-lock.json
