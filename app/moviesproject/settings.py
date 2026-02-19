@@ -163,13 +163,3 @@ SPECTACULAR_SETTINGS = {
 
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 SITE_ID = 1
-
-SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = (
-    "741613548338-m5s4vqapk1bim3a6up21rm66ndf04ijn.apps.googleusercontent.com"
-)
-SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = "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"
-
-SOCIAL_AUTH_GOOGLE_OAUTH2_SCOPE = [
-    "https://www.googleapis.com/auth/userinfo.email",
-    "https://www.googleapis.com/auth/userinfo.profile",
-]
