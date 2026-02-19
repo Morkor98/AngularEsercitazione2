@@ -1,1 +1,17 @@
-<p>movie-list works!</p>
+<div class="row">
+  <div class="col-12">
+    <div id="movies" class="shadow p-4 rounded">
+      <div class="d-flex flex-wrap justify-content-between">
+        <h2 class="fw-bold">Film</h2>
+      </div>
+      <hr/>
+
+      @for(movie of movieList; track $index) {
+        <app-movie-list [movie]="movie"></app-movie-list>
+      } @empty {
+        <p>No movies found</p>
+      }
+      <!-- movie-item -->
+    </div>
+  </div>
+</div>
