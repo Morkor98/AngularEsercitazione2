@@ -7,7 +7,7 @@ import {Movie} from '../../../movie/movie';
   providedIn: 'root',
 })
 export class MovieApi {
-  readonly API_URL = "http://localhost:8000/api/v1/movies"
+  readonly API_URL = "http://localhost:8000/api"
   private http: HttpClient = inject(HttpClient);
 
   constructor() {}

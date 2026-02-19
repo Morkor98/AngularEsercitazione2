@@ -6,8 +6,8 @@
       </div>
       <hr/>
 
-      @for(movie of movieList; track $index) {
-        <app-movie-list [movie]="movie"></app-movie-list>
+      @for(movie of movieList(); track $index) {
+        <app-movie-item [movie]="movie"></app-movie-item>
       } @empty {
         <p>No movies found</p>
       }
