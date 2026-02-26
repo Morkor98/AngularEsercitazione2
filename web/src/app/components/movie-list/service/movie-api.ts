@@ -1,7 +1,8 @@
 import { inject, Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
-import {Movie} from '../../../movie/movie';
+import {Movie} from '../../../models/movie';
+import {Streaming} from '../../../models/streaming';
 
 @Injectable({
   providedIn: 'root',
@@ -14,6 +15,10 @@ export class MovieApi {
 
   getMovieList(): Observable<Movie[]> {
     return this.http.get<Movie[]>(`${this.API_URL}/movies/`)
+  }
+
+  getChannelList(): Observable<Streaming[]> {
+    return this.http.get<Streaming[]>(`${this.API_URL}/movies/channels/`)
   }
 
   deleteMovie(movieId: number): Observable<Movie> {
