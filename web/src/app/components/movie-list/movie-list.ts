@@ -20,6 +20,26 @@ export class MovieList implements OnInit, OnDestroy {
   constructor(private api: MovieApi) { }
 
   ngOnInit() {
+    this.onGetMovieList();
+  }
+
+  onDeleteMovie(movieId: number) {
+    this.subscription.add(
+      this.api.deleteMovie(movieId).subscribe({
+        error:(e: HttpErrorResponse) => {
+          throw Error(
+            `Cannot connect to API: Error: ${e.status} - ${e.message}`
+          );
+        },
+        complete: () => {
+          this.onGetMovieList();
+        }
+      })
+    );
+  }
+
+
+  onGetMovieList() {
     this.subscription.add(
       this.api.getMovieList().subscribe({
         next: (movieList: Movie[]) => {
@@ -27,12 +47,13 @@ export class MovieList implements OnInit, OnDestroy {
         },
         error: (e: HttpErrorResponse) => {
           throw Error(
-            `Cannot connect to API: Errpr: ${e.status} - ${e.message}`
+            `Cannot connect to API: Error: ${e.status} - ${e.message}`
           );
         }
       })
     );
   }
+
   ngOnDestroy() {
     this.subscription.unsubscribe();
   }

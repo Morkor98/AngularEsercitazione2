@@ -1,4 +1,4 @@
-import {Component, input, InputSignal} from '@angular/core';
+import {Component, EventEmitter, input, InputSignal, Output} from '@angular/core';
 import {Movie} from '../movie';
 
 @Component({
@@ -9,4 +9,9 @@ import {Movie} from '../movie';
 })
 export class MovieItem {
   movie: InputSignal<Movie> = input.required()
+  @Output() deleteMovieEvent: EventEmitter<Movie> = new EventEmitter()
+
+  deleteMovie(): void {
+    this.deleteMovieEvent.emit(this.movie());
+  }
 }
