@@ -1,12 +1,12 @@
 from rest_framework.routers import SimpleRouter
 
-from movies.views import MovieViewSet
+from movies.views import MovieViewSet, PlatformViewSet
+
 
 app_name = "movies"
 
 router = SimpleRouter()
+router.register("movies/channel", PlatformViewSet, basename="movies/channel")
 router.register("movies", MovieViewSet, basename="movies")
-#TODO
-# router.register("")
 
 urlpatterns = router.urls

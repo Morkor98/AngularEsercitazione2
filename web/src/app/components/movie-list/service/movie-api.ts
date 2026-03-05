@@ -17,8 +17,12 @@ export class MovieApi {
     return this.http.get<Movie[]>(`${this.API_URL}/movies/`)
   }
 
+  addMovie(movie: Movie): Observable<Movie> {
+    return this.http.post<Movie>(`${this.API_URL}/movies/`, movie)
+  }
+
   getChannelList(): Observable<Streaming[]> {
-    return this.http.get<Streaming[]>(`${this.API_URL}/movies/channels/`)
+    return this.http.get<Streaming[]>(`${this.API_URL}/movies/channel/`)
   }
 
   deleteMovie(movieId: number): Observable<Movie> {

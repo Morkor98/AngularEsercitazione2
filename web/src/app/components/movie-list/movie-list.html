@@ -9,11 +9,13 @@
       @for(movie of movieList(); track $index) {
         <app-movie-item
           [movie]="movie"
+          [streaming]="channelMap().get(movie.platform ? movie.platform: -1)"
           (deleteMovieEvent)="onDeleteMovie(movie.id)">
         </app-movie-item>
       } @empty {
         <p>No movies found</p>
       }
+      <app-movie-modal [channelList]="channelList()"></app-movie-modal>
     </div>
   </div>
 </div>
