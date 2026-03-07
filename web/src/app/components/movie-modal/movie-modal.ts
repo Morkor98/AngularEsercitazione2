@@ -16,14 +16,14 @@ export class MovieModal {
   channelList: InputSignal<Streaming[]> =
   input.required<Streaming[]>();
 
-  @Output() addMovieEvent: EventEmitter<Movie[]> = new EventEmitter();
+  @Output() addMovieEvent: EventEmitter<Movie> = new EventEmitter();
 
 
   constructor(private formBuilder: FormBuilder) {
     this.addMovieForm = this.formBuilder.group({
       title: [''],
       description: [''],
-      streaming: ['---'],
+      platform: ['---'],
     });
   }
 

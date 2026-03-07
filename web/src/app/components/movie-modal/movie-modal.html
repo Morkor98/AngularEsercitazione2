@@ -1,11 +1,11 @@
 <div
   class="modal fade"
   id="addMovieModal"
-  tabIndex="-1"
+  tabindex="-1"
   aria-labelledby="addMovieModal"
   aria-hidden="true"
-  >
-  <div class="modal-dialog">
+>
+  <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
       <div class="modal-header">
         <h1 class="modal-title fs-5" id="addMovieModal">
@@ -22,10 +22,10 @@
           <div class="form-group">
             <label for="title">Title:</label>
             <input
-            type="text"
-            id="title"
-            class="form-control"
-            formControlName="title"/>
+              type="text"
+              id="title"
+              class="form-control"
+              formControlName="title"/>
           </div>
           <div class="form-group">
             <label for="description">Description:</label>
@@ -40,7 +40,7 @@
             <select
               id="channel"
               class="form-control"
-              formControlName="streaming_channel">
+              formControlName="platform">
               <option selected>---</option>
               @for (channel of channelList(); track $index) {
                 <option value={{channel.id}}>{{channel.name}}</option>
@@ -48,7 +48,7 @@
             </select>
           </div>
           <div class="d-flex gap-2 justify-content-end mt-4">
-            <button type="submit" class="btn btn-success">
+            <button type="submit" class="btn btn-success" data-bs-dismiss="modal">
               Create
             </button>
             <button
@@ -62,4 +62,4 @@
       </div>
     </div>
   </div>
-</div>>
+</div>

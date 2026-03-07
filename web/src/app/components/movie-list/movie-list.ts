@@ -52,6 +52,19 @@ class MovieList implements OnInit, OnDestroy {
     );
   }
 
+  onAddMovie(movie: Movie) {
+    this.subscription.add(
+      this.api.addMovie(movie).subscribe({
+        error: (e: HttpErrorResponse) => {
+          console.log(e.toString())
+        },
+        complete: () => {
+          this.onGetMovieList()
+        }
+      })
+    )
+  }
+
   onGetChannelList() {
     this.subscription.add(
       this.api.getChannelList().subscribe({

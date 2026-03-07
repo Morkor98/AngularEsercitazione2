@@ -3,6 +3,9 @@
     <div id="movies" class="shadow p-4 rounded">
       <div class="d-flex flex-wrap justify-content-between">
         <h2 class="fw-bold">Film</h2>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addMovieModal">
+          Aggiungi film
+        </button>
       </div>
       <hr/>
 
@@ -15,7 +18,7 @@
       } @empty {
         <p>No movies found</p>
       }
-      <app-movie-modal [channelList]="channelList()"></app-movie-modal>
+      <app-movie-modal [channelList]="channelList()" (addMovieEvent)="onAddMovie($event)"></app-movie-modal>
     </div>
   </div>
 </div>
